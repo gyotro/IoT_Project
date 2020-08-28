@@ -43,46 +43,6 @@ Thread.start { 	println("Press Enter to stop...");
 	while (bStart)
 		{
 
-			
-		/* vecchia versione 
-		LinkedHashMap listaJsonOut_bk;
-		LinkedHashMap msgOut = new LinkedHashMap()
-		def listaJson = TelemetryJson.get("telemetryDataList")
-		ArrayList<LinkedHashMap> listaJson2 = TelemetryJson.telemetryDataList
-		ArrayList<LinkedHashMap<String, Object>> listaJsonOut = new ArrayList<LinkedHashMap<String, Object>>()
-		ArrayList<LinkedHashMap<String, String> > listaJsonOutVector_bk = new ArrayList<LinkedHashMap>()
-			
-		date = ( System.currentTimeMillis() - UsefulParam.delay )
-		for (LinkedHashMap currentJson : listaJson)
-				{
-				listaJsonOut_bk = new LinkedHashMap()
-				currentJson.each { entry -> listaJsonOut_bk.put(entry.key, (( ( (String) entry.key).equalsIgnoreCase("millisUTC") ) ? date + "" : entry.value)) }
-				listaJsonOut.add(listaJsonOut_bk)
-				date = date + 100
-			}
-	
-		def devSn= TelemetryJson.get("devSn")
-		def onTime= TelemetryJson.get("onTime")
-		def ontTimeMillisUTC = TelemetryJson.get("millisUTC")
-		
-		/*
-		 * recuperare gli altri dati: ontTimeMillisUTC, onTime, devSn e costruire il JSON Finale
-		
-		
-		def date1= System.currentTimeMillis() + ""
-		
-		LinkedHashMap mapOut= new LinkedHashMap()
-		
-		mapOut.put("telemetryDataList", listaJsonOut)
-		mapOut.put("devSn", devSn)
-		mapOut.put("onTime", onTime)
-		mapOut.put("ontTimeMillisUTC", date1)
-		
-		def jsout = new JsonOutput()
-		//def js = jsout.toJson(mapOut) + ""
-		 * 
-		 */
-
 			List listaJson = TelemetryJson.get("telemetryDataList")
 			ArrayList<LinkedHashMap> listaJson2 = TelemetryJson.telemetryDataList
 			ArrayList<LinkedHashMap<String, Object>> listaJsonOut = new ArrayList<LinkedHashMap<String, Object>>()
