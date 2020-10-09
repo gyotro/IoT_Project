@@ -58,13 +58,14 @@ Thread.start { 	println("Press Enter to stop...");
 					[
 						/*'date' : ( new SimpleDateFormat("MMM dd, yyyy hh:mm:ss aa", Locale.ENGLISH).format( new Date() ) ),*/
 						"date" : ( sGetTimeExtended() ),
-						'millisUTC': (System.currentTimeMillis() - UsefulParam.delay),
+						'millisUTC': setTime(),
 						"devId": it.devId,
 						"varId": it.varId,
 						"value": it.value,
 						"quality": it.quality
+						
 					]
-	
+	//				Thread.sleep(100)
 				} )
 	
 		'devSn' (TelemetryJson.devSn)
@@ -97,6 +98,11 @@ Thread.start { 	println("Press Enter to stop...");
 		DateTimeFormatter dateTimeFormatterOut = DateTimeFormatter.ofPattern( "MMM dd, yyyy hh:mm:ss a", Locale.ENGLISH )
 		LocalDateTime localDateTime = LocalDateTime.now().minusSeconds( ( UsefulParam.delay / 1000 ).toLong() )
 		return localDateTime.format(dateTimeFormatterOut)
+	}
+	Long setTime()
+	{
+		Thread.sleep(UsefulParam.internalDelay)
+		return ( System.currentTimeMillis() - UsefulParam.delay )
 	}
 
 	
