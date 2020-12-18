@@ -21,10 +21,6 @@ def sumFileSize = {
 File groovySrcDir = new File(sPath)
 
 def filterGroovyFiles = ~/.*\.json$/
-// def filterGroovyFiles = '.json'
-
-// groovySrcDir.traverse( type: FILES, visit: sumFileSize, nameFilter: filterGroovyFiles )
-// println "Total file size for $groovyFileCount Json source files is: $totalFileSize"
 
 File[] fileArray = groovySrcDir.listFiles()
 List<File> jsonFile = fileArray.toList().findAll {it.getName().matches(filterGroovyFiles)}
